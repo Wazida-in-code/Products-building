@@ -1,38 +1,38 @@
 /* css */
-.product-card {
+/* .product-card {
   width: 300px;
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-}
+} */
 
-.product-card:hover {
+/* .product-card:hover {
   transform: translateY(-5px);
-}
+} */
 
 /* Image */
 
-.product-image-container {
+/* .product-image-container {
   height: 250px;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.product-image {
+/* .product-image {
   width: 180px;
   height: 200px;
   object-fit: contain;
-}
+} */
 
 /* Product information */
 
-.product-info {
+/* .product-info {
   padding: 20px;
-}
+} */
 
 .product-category {
   font-size: 13px;

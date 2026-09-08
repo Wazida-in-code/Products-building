@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { ProductType } from "../../type";
 import "./Product.css"
 
@@ -6,28 +7,33 @@ export interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  console.log(Product);
+
+    const [feedback, setFeedback] = useState(false);
+
+    const handleFeedback = () => {
+      setFeedback(!feedback)
+    }
+  
   return (
     <>
-      <div className="product-card">
+      <div className="w-[300px] bg-blue-50 rounded-[12px] overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.1)] transform transition-transform duration-200 ease-out hover:scale-115 hover: -translate-y[5px] hover:bg-blue-100">
         {" "}
-        <div className="product-image-container">
+        <div className="h-[250px] p-[20px] flex justify-center items-center">
           {" "}
           <img
             src={product.image}
             alt={product.title}
-            className="product-image"
+            className="w-[180px] h-[200px] object-contain"
           />{" "}
         </div>{" "}
-        <div className="product-info">
+        <div className="p-[20px]">
           {" "}
           <p className="product-category">{product.category}</p>{" "}
           <h2 className="product-title"> {product.title} </h2>{" "}
           <p className="product-description"> {product.description} </p>{" "}
           <div className="product-rating">
             {" "}
-            ⭐ {product.rating.rate}{" "}
-            <span>({product.rating.count} reviews)</span>{" "}
+            <button onClick={handleFeedback} className="p-[10px] border-2 border-solid border-purple-500 bg-purple-300 rounded-2xl m-2.5" >{feedback ? "Good!" : "Feedback"}</button>
           </div>{" "}
           <div className="product-bottom">
             {" "}
