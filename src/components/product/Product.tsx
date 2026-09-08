@@ -4,14 +4,16 @@ import "./Product.css"
 
 export interface ProductProps {
   product: ProductType;
+  handleFeedbackItems: (product: ProductType) => void
 }
 
-export default function Product({ product }: ProductProps) {
+export default function Product({ product, handleFeedbackItems}: ProductProps) {
 
     const [feedback, setFeedback] = useState(false);
 
     const handleFeedback = () => {
       setFeedback(!feedback)
+      handleFeedbackItems(product)
     }
   
   return (
